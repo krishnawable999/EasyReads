@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 const port = 8000;
 const userRoute = require("./routes/user");
+const blogRoute = require("./routes/blog");
 const mongoose = require("mongoose");
 const cookieparser = require("cookie-parser");
 const { checkForAuthenticationCookie } = require("./middleware/authentication");
@@ -22,6 +23,7 @@ app.get("/", (req,res)=>{
 });
 
 app.use("/user",userRoute);
+app.use("/blog",blogRoute);
 
 app.listen(port, ()=>{
     console.log("Server stared at port:"+port);
