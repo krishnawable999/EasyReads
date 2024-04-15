@@ -3,7 +3,7 @@ const User = require("../models/user");
 const router = Router();
 const multer = require("multer");
 const path = require("path");
-const Blog = require("../models/blog");
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, path.resolve(`./public/uploads`))
